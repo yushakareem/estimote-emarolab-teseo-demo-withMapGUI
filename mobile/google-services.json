@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "228945544673",
+    "firebase_url": "https://emarolabestimotedemo.firebaseio.com",
+    "project_id": "emarolabestimotedemo",
+    "storage_bucket": "emarolabestimotedemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228945544673:android:ce3b43ffde3e5fea",
+        "android_client_info": {
+          "package_name": "com.example.yushakareem.emarolabestimotedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228945544673-kvutsm6fvs8ks4c84u4sks2blp25fu1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yushakareem.emarolabestimotedemo",
+            "certificate_hash": "aee422c18031bf8b2635267316f1cfdd5d76db4c"
+          }
+        },
+        {
+          "client_id": "228945544673-ot9ujr45cifc0g1rn2il5tbv0b62k285.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALCuDEOxYW4Peho3lKDPisxuk4dmJ8Rc0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228945544673-ot9ujr45cifc0g1rn2il5tbv0b62k285.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
