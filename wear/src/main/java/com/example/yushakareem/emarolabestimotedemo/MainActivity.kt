@@ -87,7 +87,7 @@ class MainActivity : WearableActivity() {
 
         val zoneLO = this.proximityObserver.zoneBuilder()
             .forTag("EmaroLab Office Area")
-            .inCustomRange(3.9)
+            .inCustomRange(3.5)
             .withOnChangeAction(object : Function1<List<ProximityContext>, Unit> {
                 override fun invoke(contexts : List<ProximityContext>) {
                     val wall = ArrayList<String?>()
@@ -104,7 +104,7 @@ class MainActivity : WearableActivity() {
 
         val zoneLOQ1 = this.proximityObserver.zoneBuilder()
                 .forTag("EmaroLab Office Area")
-                .inCustomRange(2.0)
+                .inCustomRange(2.3)
                 .withOnEnterAction(object : Function1<ProximityContext, Unit> {
                     override fun invoke(context: ProximityContext) {
                         val wall = context.getAttachments()["Wall"]
@@ -150,7 +150,7 @@ class MainActivity : WearableActivity() {
 
         val zoneLM = this.proximityObserver.zoneBuilder()
                 .forTag("MotionCapture Area")
-                .inCustomRange(3.5)
+                .inCustomRange(3.0)
                 .withOnChangeAction(object : Function1<List<ProximityContext>, Unit> {
                     override fun invoke(contexts : List<ProximityContext>) {
                         val wall = ArrayList<String?>()
