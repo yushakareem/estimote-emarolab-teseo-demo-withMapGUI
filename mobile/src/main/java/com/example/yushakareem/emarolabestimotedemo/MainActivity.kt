@@ -17,8 +17,6 @@ import com.google.firebase.database.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
-    private lateinit var button4: Button
-    private lateinit var button6: Button
 
     private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
     private lateinit var mAuth: FirebaseAuth

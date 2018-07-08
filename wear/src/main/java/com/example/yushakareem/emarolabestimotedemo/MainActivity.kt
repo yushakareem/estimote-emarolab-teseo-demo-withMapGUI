@@ -217,19 +217,17 @@ class MainActivity : WearableActivity() {
     private fun locationFromProximityLogic(near_b_yel1: Boolean, far_b_yel1: Boolean, near_b_prp1: Boolean, far_b_prp1: Boolean, near_b_pnk1: Boolean, far_b_pnk1: Boolean, near_b_yel2: Boolean, far_b_yel2: Boolean, near_b_pnk2: Boolean, far_b_pnk2: Boolean, near_b_prp2: Boolean, far_b_prp2: Boolean, inZone_l_o: Boolean, inZone_l_m: Boolean): String? {
         if (inZone_l_o) {
             currentLocation = "lab_office"
-            if (inZone_l_o && near_b_yel1)
+            if (near_b_yel1)
                 currentLocation = "lab_office_q1"
-            if (inZone_l_o && near_b_prp1)
+            if (near_b_prp1)
                 currentLocation = "lab_office_q2"
-            if (inZone_l_o && near_b_pnk1 && far_b_prp1)
+            if (near_b_pnk1 && far_b_prp1)
                 currentLocation = "lab_office_q3"
-            if (inZone_l_o && near_b_pnk1 && far_b_yel1)
+            if (near_b_pnk1 && far_b_yel1)
                 currentLocation = "lab_office_q4"
-        } else if (inZone_l_m) {
-            currentLocation = "lab_mocap"
-        } else {
-            currentLocation = "unknown"
         }
+        else if (inZone_l_m) currentLocation = "lab_mocap"
+        else currentLocation = "unknown"
         return currentLocation
     }
 
