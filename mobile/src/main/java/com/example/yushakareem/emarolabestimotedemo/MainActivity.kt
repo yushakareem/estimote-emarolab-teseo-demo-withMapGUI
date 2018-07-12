@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     //private var userID: String? = null
     private lateinit var loc: String
 
-    private val UIDWatchLGG6P1 = "997ce849-78f0-43c1-b033-7da567cb1d91"
+    private val UIDWatchLGG6P1 = "1d0fb539-e984-4de5-844c-ffe59e6b62d6"
     private val UIDWatchLGG6P2 = "f0b03ed8-9527-49e0-ad24-5a70a2cf254e"
 
     private var UIDofWatchToObserve: String? = null
@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             smartWatchToBeObserved(UIDWatchLGG6P1)
         }
-        // get reference to button3
-        val button3 = findViewById<Button>(R.id.button3)
-        // set on-click listener for button3
-        button3.setOnClickListener {
-            smartWatchToBeObserved(UIDWatchLGG6P2)
-        }
+//        // get reference to button3
+//        val button3 = findViewById<Button>(R.id.button3)
+//        // set on-click listener for button3
+//        button3.setOnClickListener {
+//            smartWatchToBeObserved(UIDWatchLGG6P2)
+//        }
 
 
         myRef.addValueEventListener(object : ValueEventListener {

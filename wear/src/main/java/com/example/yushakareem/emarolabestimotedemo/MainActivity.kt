@@ -85,33 +85,36 @@ class MainActivity : WearableActivity() {
                 .withBalancedPowerMode()
                 .build()
 
-        val zoneLO = this.proximityObserver.zoneBuilder()
-            .forTag("EmaroLab Office Area")
-            .inCustomRange(3.5)
-            .withOnChangeAction(object : Function1<List<ProximityContext>, Unit> {
-                override fun invoke(contexts : List<ProximityContext>) {
-                    val wall = ArrayList<String?>()
-                    for (context in contexts) {
-                        wall.add(context.getAttachments()["Wall"])
-                    }
-                    //Log.d("app", "In range of desks: $wall")
-                    inZone_l_o = wall.count() >= 1
-                    inZone_l_m = false
-                    thinkAndAct()
-                }
-            })
-            .create()
+//        val zoneLO = this.proximityObserver.zoneBuilder()
+//            .forTag("EmaroLab Office Area")
+//            .inCustomRange(3.5)
+//            .withOnChangeAction(object : Function1<List<ProximityContext>, Unit> {
+//                override fun invoke(contexts : List<ProximityContext>) {
+//                    val wall = ArrayList<String?>()
+//                    for (context in contexts) {
+//                        wall.add(context.getAttachments()["Wall"])
+//                    }
+//                    //Log.d("app", "In range of desks: $wall")
+////                    inZone_l_o = wall.count() >= 1
+////                    inZone_l_m = false
+////                    thinkAndAct()
+//                    if (wall.count() >= 1)
+//                        writeUserLocationInFirebase(UID,"lab_office")
+//                }
+//            })
+//            .create()
 
         val zoneLOQ1 = this.proximityObserver.zoneBuilder()
                 .forTag("EmaroLab Office Area")
-                .inCustomRange(2.3)
+                .inCustomRange(2.0)
                 .withOnEnterAction(object : Function1<ProximityContext, Unit> {
                     override fun invoke(context: ProximityContext) {
                         val wall = context.getAttachments()["Wall"]
                         //Log.d("watch","Welcome to $wall's wall")
                         if (wall == "Alessandro")
-                            near_b_yel1 = true
-                        thinkAndAct()
+                            writeUserLocationInFirebase(UID,"lab_office_q1")
+//                            near_b_yel1 = true
+//                        thinkAndAct()
                     }
                 })
                 .withOnExitAction(object : Function1<ProximityContext, Unit> {
@@ -119,8 +122,9 @@ class MainActivity : WearableActivity() {
                         val wall = context.getAttachments()["Wall"]
                         //Log.d("app", "Bye bye, from $wall's wall")
                         if (wall == "Alessandro")
-                            near_b_yel1 = false
-                        thinkAndAct()
+                            writeUserLocationInFirebase(UID,"lab_office")
+//                            near_b_yel1 = false
+//                        thinkAndAct()
                     }
                 })
                 .create()
@@ -133,8 +137,9 @@ class MainActivity : WearableActivity() {
                         val wall = context.getAttachments()["Wall"]
                         //Log.d("watch","Welcome to $wall's wall")
                         if (wall == "Yusha")
-                            near_b_prp1 = true
-                        thinkAndAct()
+                            writeUserLocationInFirebase(UID,"lab_office_q2")
+//                            near_b_prp1 = true
+//                        thinkAndAct()
                     }
                 })
                 .withOnExitAction(object : Function1<ProximityContext, Unit> {
@@ -142,8 +147,34 @@ class MainActivity : WearableActivity() {
                         val wall = context.getAttachments()["Wall"]
                         //Log.d("app", "Bye bye, from $wall's wall")
                         if (wall == "Yusha")
-                            near_b_prp1 = false
-                        thinkAndAct()
+                            writeUserLocationInFirebase(UID,"lab_office")
+//                            near_b_prp1 = false
+//                        thinkAndAct()
+                    }
+                })
+                .create()
+
+        val zoneLOQ3 = this.proximityObserver.zoneBuilder()
+                .forTag("EmaroLab Office Area")
+                .inCustomRange(2.0)
+                .withOnEnterAction(object : Function1<ProximityContext, Unit> {
+                    override fun invoke(context: ProximityContext) {
+                        val wall = context.getAttachments()["Wall"]
+                        //Log.d("watch","Welcome to $wall's wall")
+                        if (wall == "OfficeCenter")
+                            writeUserLocationInFirebase(UID,"lab_office_q3")
+//                            near_b_prp1 = true
+//                        thinkAndAct()
+                    }
+                })
+                .withOnExitAction(object : Function1<ProximityContext, Unit> {
+                    override fun invoke(context: ProximityContext) {
+                        val wall = context.getAttachments()["Wall"]
+                        //Log.d("app", "Bye bye, from $wall's wall")
+                        if (wall == "OfficeCenter")
+                            writeUserLocationInFirebase(UID,"lab_office")
+//                            near_b_prp1 = false
+//                        thinkAndAct()
                     }
                 })
                 .create()
@@ -158,14 +189,16 @@ class MainActivity : WearableActivity() {
                             wall.add(context.getAttachments()["Wall"])
                         }
                         //Log.d("app", "In range of desks: $wall")
-                        inZone_l_m = wall.count() >= 1
-                        inZone_l_o = false
-                        thinkAndAct()
+//                        inZone_l_m = wall.count() >= 1
+//                        inZone_l_o = false
+//                        thinkAndAct()
+                        if (wall.count() >= 1)
+                            writeUserLocationInFirebase(UID,"lab_mocap")
                     }
                 })
                 .create()
 
-        this.proximityObservationHandler = this.proximityObserver.addProximityZones(zoneLO,zoneLM,zoneLOQ1,zoneLOQ2).start()
+        this.proximityObservationHandler = this.proximityObserver.addProximityZones(zoneLM,zoneLOQ1,zoneLOQ2,zoneLOQ3).start()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
