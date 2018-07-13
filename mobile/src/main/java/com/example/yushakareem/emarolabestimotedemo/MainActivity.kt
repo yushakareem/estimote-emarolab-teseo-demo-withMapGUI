@@ -37,12 +37,12 @@ class MainActivity : AppCompatActivity() {
 
         //get ref to image view
         this.imageView = this.findViewById(R.id.imageView)
-        // get reference to button2
-        val button2 = findViewById<Button>(R.id.button2)
-        // set on-click listener for button2
-        button2.setOnClickListener {
-            smartWatchToBeObserved(UIDWatchLGG6P1)
-        }
+//        // get reference to button2
+//        val button2 = findViewById<Button>(R.id.button2)
+//        // set on-click listener for button2
+//        button2.setOnClickListener {
+//            smartWatchToBeObserved(UIDWatchLGG6P1)
+//        }
 //        // get reference to button3
 //        val button3 = findViewById<Button>(R.id.button3)
 //        // set on-click listener for button3
@@ -67,8 +67,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showData(dataSnapshot: DataSnapshot) {
-        if (UIDofWatchToObserve != null) {
-            loc = dataSnapshot.child("users").child(UIDofWatchToObserve!!).child("location").value.toString()
+        if (true) {
+            loc = dataSnapshot.child("users").child(UIDWatchLGG6P1).child("location").value.toString()
             showImageOnScreen(loc)
         } else {
             Log.d("Watch","UID of smartwatch to be observed is null")
@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             "lab_office_q2" -> this.imageView.setImageResource(R.drawable.lab_office_q2)
             "lab_office_q3" -> this.imageView.setImageResource(R.drawable.lab_office_q3)
             "lab_office_q4" -> this.imageView.setImageResource(R.drawable.lab_office_q4)
+            //"lab_alarm" -> this.imageView.setImageResource(R.drawable.lab_alarm)
             "unknown" -> this.imageView.setImageResource(R.drawable.lab_empty)
         }
     }

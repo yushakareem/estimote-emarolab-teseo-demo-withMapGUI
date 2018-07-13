@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        app:srcCompat="@drawable/lab_empty"
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="415dp"

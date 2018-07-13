@@ -25,6 +25,7 @@ import com.estimote.proximity_sdk.proximity.ProximityContext
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.content.Context
+import android.os.Handler
 import java.util.*
 
 
@@ -71,6 +72,8 @@ class MainActivity : WearableActivity() {
 
     // Init unique ID for the app installed on a smart-device
     private var UID: String? = null
+
+    private var timeOfEntry: Long = 0
 
     private fun startProximityObservation() {
 
@@ -192,8 +195,12 @@ class MainActivity : WearableActivity() {
 //                        inZone_l_m = wall.count() >= 1
 //                        inZone_l_o = false
 //                        thinkAndAct()
-                        if (wall.count() >= 1)
-                            writeUserLocationInFirebase(UID,"lab_mocap")
+                        if (wall.count() >= 1) {
+                            timeOfEntry = System.currentTimeMillis()
+                            writeUserLocationInFirebase(UID, "lab_mocap")
+//                            val handler: Handler? = null
+//                            handler!!.postDelayed({ writeUserLocationInFirebase(UID, "lab_alarm") }, 15000)
+                        }
                     }
                 })
                 .create()
