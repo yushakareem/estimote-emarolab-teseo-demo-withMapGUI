@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.yushakareem.emarolabestimotedemo"
+        applicationId "com.example.yushakareem.emarolabteseoestimotedemowithtablegui"
         minSdkVersion 25
         targetSdkVersion 27
         versionCode 1
@@ -25,21 +25,21 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.google.android.support:wearable:2.3.0'
+    implementation 'com.google.android.gms:play-services-wearable:16.0.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:percent:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:wear:27.1.1'
-    implementation 'com.google.firebase:firebase-database:16.0.1'
-    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
     compileOnly 'com.google.android.wearable:wearable:2.3.0'
 
     //estimote proximity sdk
-    implementation 'com.estimote:proximity-sdk:0.6.0'
+    implementation 'com.estimote:proximity-sdk:1.0.3'
 
     //EstimoteRequirementsWizard comes from here
     implementation 'com.estimote:mustard:0.2.1'
+    implementation 'com.google.firebase:firebase-database:16.0.2'
 }
-
 
 apply plugin: 'com.google.gms.google-services'

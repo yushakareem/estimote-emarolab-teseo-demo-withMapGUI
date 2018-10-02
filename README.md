@@ -1,4 +1,4 @@
-# A demo that integrates (Estimote beacons - smartwatch - FireBase - smartphone) with a map-GUI
+# A demo that integrates (Estimote beacons - smartwatch - FireBase - smartphone) with a table-GUI
 ## Coded in Kotlin in Android Studio
 
 The idea is to localize a user (wearing a smart-watch) who is moving in EmaroLab, based on proximity to Estimote beacons. **AND**. Display the users approximate location within EmaroLab.

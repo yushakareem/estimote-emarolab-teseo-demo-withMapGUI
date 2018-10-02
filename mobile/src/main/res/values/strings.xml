@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">EmaroLabEstimoteDemo</string>
-    <string name="lab">lab</string>
-    <string name="button_sw_G6P1">SmartWatch G6P1</string>
-    <string name="button_sw_G6P2">SmartWatch G6P2</string>
+    <string name="app_name">Teseo-Estimote Demo With TableGUI</string>
+    <string name="button_table_gui">Go To Table GUI</string>
+    <string name="at_the_db">At the DB</string>
+    <string name="user_1_location">User-1 Location</string>
+    <string name="linearLayout">Linear Layout</string>
+    <string name="enter_name_of_the_user">Enter name of the user</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="room2">Room</string>
+    <string name="floor2">1</string>
+    <string name="person2">Person 2</string>
+    <string name="room1">Room</string>
+    <string name="floor1">1</string>
+    <string name="person1">Person 1</string>
 </resources>
